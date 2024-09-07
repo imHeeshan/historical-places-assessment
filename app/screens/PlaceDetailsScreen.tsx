@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const App = () => {
+const PlaceDetailsScreen = () => {
   return (
     <View>
-      <Text>Well come to react native</Text>
+      <Text>PlaceDetailsScreen</Text>
     </View>
   )
 }
 
-export default App
+export default PlaceDetailsScreen
