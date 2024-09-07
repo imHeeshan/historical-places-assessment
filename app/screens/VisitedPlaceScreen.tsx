@@ -1,12 +1,12 @@
 import { View, Text, Button } from 'react-native'
 import React from 'react'
 
-const HomeScreen = ({navigation}) => {
+const VisitedPlaceScreen = ({navigation}) => {
   return (
     <View>
-   
+       <Text>Visited</Text>
     </View>
   )
 }
 
-export default HomeScreen
+export default VisitedPlaceScreen
