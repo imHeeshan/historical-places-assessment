@@ -76,19 +76,20 @@ const initialState = {
 
 
 // Get All Student Record
-export const getAllPlaces = createAsyncThunk('places/getAll', async (_, thunkAPI) => {
-    try {
-        Alert.alert()
+// when we will use api
+// export const getAllPlaces = createAsyncThunk('places/getAll', async (_, thunkAPI) => {
+//     try {
+//         Alert.alert()
 
-        return await placesServices.getAllPlaces()
-    } catch (error) {
-        const message =
-            (error.response && error.response.data && error.response.data.message) ||
-            error.message ||
-            error.toString()
-        return thunkAPI.rejectWithValue(message)
-    }
-})
+//         return await placesServices.getAllPlaces()
+//     } catch (error) {
+//         const message =
+//             (error.response && error.response.data && error.response.data.message) ||
+//             error.message ||
+//             error.toString()
+//         return thunkAPI.rejectWithValue(message)
+//     }
+// })
 
 
 const placesSlice = createSlice({

@@ -10,22 +10,6 @@ import { handleVisited } from '../../redux/features/place/places/placeSlice';
 import { useDispatch } from 'react-redux';
 
 
-// const PostImage = ({ images }) => {
-//     const [isTagNotation, setIsTagNotation] = useState(false);
-//     const [currentIndex, setCurrentIndex] = useState(0);
-//     return (
-//       <View style={{ width: SCREEN_WIDTH }}>
-//         <ImgCarousel
-//           imgData={images}
-//           currentIndex={currentIndex}
-//           setCurrentIndex={setCurrentIndex}
-//           rightComponentType="icon"
-//           isCarousel={images.length > 1 && true}
-//         />
-//       </View>
-//     );
-//   };
-
 
 const PlaceDetails = ({ item }) => {
     const { name = "", description = "", isVisited = false, tags = "" } = item || {}
