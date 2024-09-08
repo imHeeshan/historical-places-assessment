@@ -1,12 +1,26 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { StatusBar, View } from "react-native";
+import { Provider } from "react-redux";
+import { NavigationContainer } from "@react-navigation/native";
+import StackNavigator from "./app/navigator/StackNaviagtor";
+import { store } from "./app/redux/store";
+import { StyleSheet } from "react-native";
+import { colors } from "./app/colors";
 
-const App = () => {
+
+export default function App() {
   return (
-    <View>
-      <Text>Well come to react native</Text>
-    </View>
-  )
+    <Provider store={store}>
+      <View style={styles.mainContainer}>
+        <NavigationContainer>
+          <StatusBar hidden={false} />
+          <StackNavigator />
+        </NavigationContainer>
+      </View>
+    </Provider>
+
+  );
 }
 
-export default App
+const styles = StyleSheet.create({
+  mainContainer: { flex: 1,backgroundColor:colors.Neutrals[100] }
+})
