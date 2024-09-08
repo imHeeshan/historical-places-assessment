@@ -5,25 +5,33 @@ import {
     HomeScreen,
     VisitedPlaceScreen,
 } from "../screens/_index";
-import Icon from 'react-native-vector-icons/FontAwesome5';
-import FIcon from 'react-native-vector-icons/FontAwesome';
+import { HomeAlt, MapsArrowDiagonal, Settings } from "iconoir-react-native";
+import { View } from "react-native";
+import { colors } from "../colors";
+import { useSelector } from "react-redux";
+import { allVisitedPlaces } from "../redux/features/place/places/placeSlice";
 
 const Tab = createBottomTabNavigator();
 const TabNavigator = () => {
-
+    const allVisited = useSelector(allVisitedPlaces)
     return (
+
         <Tab.Navigator
             screenOptions={{
 
                 tabBarStyle: {
-                    backgroundColor: "#222",
+                    backgroundColor: colors.Neutrals[100],
                     borderTopRightRadius: 10,
                     borderTopLeftRadius: 10,
+
                 },
-                tabBarInactiveTintColor: "#fff",
-                tabBarActiveTintColor: "pink",
+                tabBarInactiveTintColor: colors.black,
+                tabBarActiveTintColor: colors.blue,
                 headerTitleAlign: "center",
                 headerShown: false,
+                tabBarLabelStyle: {
+                    paddingBottom: 5
+                }
             }}
         >
 
@@ -32,7 +40,7 @@ const TabNavigator = () => {
                 component={HomeScreen}
                 options={{
                     tabBarIcon: ({ size, color }) => (
-                        <Icon name="home" size={size} color="#fff" />
+                        <HomeAlt color={color} height={24} width={24} />
                     ),
 
                 }}
@@ -42,10 +50,13 @@ const TabNavigator = () => {
                 component={VisitedPlaceScreen}
                 options={{
                     tabBarIcon: ({ size, color }) => (
-                        <Icon name="location-arrow" size={size} color="#fff" />
+                        <MapsArrowDiagonal
+                            color={color} height={24} width={24} />
                     ),
-                    tabBarBadge: 5,
-                    tabBarLabel:"Visited Place"
+                    tabBarBadge: allVisited.length > 0 ? allVisited.length : null,
+                    tabBarLabel: "Visited Place",
+                    headerShown:true,
+                    headerTitle:'Visted Places'
                 }}
             />
             <Tab.Screen
@@ -53,12 +64,14 @@ const TabNavigator = () => {
                 component={SettingsScreen}
                 options={{
                     tabBarIcon: ({ size, color }) => (
-                        <FIcon name="gears" size={size} color="#fff" />
+                        <Settings color={color} height={24} width={24} />
                     ),
                 }}
             />
 
         </Tab.Navigator>
+
+
     );
 };
 

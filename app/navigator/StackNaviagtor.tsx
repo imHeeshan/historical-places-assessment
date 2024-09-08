@@ -25,7 +25,7 @@ const StackNavigator = () => {
       <Stack.Screen
         name="Details"
         component={DetailsScreen}
-        
+       
       />
     </Stack.Navigator>
   );
