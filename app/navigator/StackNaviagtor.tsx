@@ -3,7 +3,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {
 
   DetailsScreen,
-  HomeScreen,
 
 } from "../screens/_index";
 import TabNavigator from "./TabNavigator";

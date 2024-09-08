@@ -1,6 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { StyleSheet } from 'react-native';
-import { colors } from '@colors';
 
 
 export const fontFamilies = StyleSheet.create({

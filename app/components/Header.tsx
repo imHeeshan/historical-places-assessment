@@ -1,6 +1,5 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Alert, StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import Icon from 'react-native-vector-icons/AntDesign';
 import { useNavigation } from '@react-navigation/native';
 import { NavArrowLeft, SendDiagonal } from 'iconoir-react-native';
 import { colors } from '../colors';
@@ -18,9 +17,9 @@ const Header = () => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={.8}
-               
+                onPress={() => Alert.alert("Share Success!")}
             >
-               <SendDiagonal height={22} width={22} color={colors.black} />
+                <SendDiagonal height={22} width={22} color={colors.black} />
 
             </TouchableOpacity>
 
@@ -38,6 +37,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         gap: 10,
         justifyContent: 'space-between',
-        marginBottom:3
+        marginBottom: 3
     }
 })

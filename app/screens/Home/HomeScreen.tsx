@@ -1,13 +1,10 @@
-import { View, Text, Button, FlatList, ScrollView, Alert, TouchableOpacity, StyleSheet } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import { View, Text, FlatList, ScrollView, TouchableOpacity, StyleSheet } from 'react-native'
+import React, { useState } from 'react'
 import MainHeader from '../../components/MainHeader'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { allPlaces, SelecetedPlaceDetails } from '../../redux/features/place/places/placeSlice'
-import axios from 'axios'
 import RenderList from './RenderList'
 import { colors } from '../../colors'
-import { fontFamilies } from '../../constants'
-import { UseText } from '../../customHooks'
 import Heading from '../../components/Heading'
 
 const HomeScreen = ({ navigation }) => {

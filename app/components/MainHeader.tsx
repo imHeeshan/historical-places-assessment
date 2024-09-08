@@ -1,7 +1,6 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, View } from 'react-native'
 import React from 'react'
-import { AppNotification, Bell } from 'iconoir-react-native'
-import { colors } from '../colors'
+import { Bell } from 'iconoir-react-native'
 
 const MainHeader = () => {
     return (

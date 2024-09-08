@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
     SettingsScreen,
@@ -6,7 +6,6 @@ import {
     VisitedPlaceScreen,
 } from "../screens/_index";
 import { HomeAlt, MapsArrowDiagonal, Settings } from "iconoir-react-native";
-import { View } from "react-native";
 import { colors } from "../colors";
 import { useSelector } from "react-redux";
 import { allVisitedPlaces } from "../redux/features/place/places/placeSlice";

@@ -1,10 +1,10 @@
-import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { FlatList, Image, StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { UseText } from '../customHooks'
 import { fontFamilies } from '../constants'
 import { colors } from '../colors'
 import { useDispatch, useSelector } from 'react-redux'
-import { allPlaces, handleVisited, suggestions } from '../redux/features/place/places/placeSlice'
+import { handleVisited, suggestions } from '../redux/features/place/places/placeSlice'
 import { useNavigation } from '@react-navigation/native'
 import Icon from 'react-native-vector-icons/Ionicons'
 

@@ -1,6 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import { placesServices } from "../placeServices"
-import { Alert } from "react-native"
+import { createSlice } from "@reduxjs/toolkit"
 
 
 const initialState = {
