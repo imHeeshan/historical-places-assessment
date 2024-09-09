@@ -2,7 +2,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'rea
 import React, { useEffect } from 'react'
 import Header from '../components/Header'
 import { useDispatch, useSelector } from 'react-redux';
-import { handleVisited, SelecetedPlaceDetails } from '../redux/features/place/places/placeSlice';
+import { handleVisited, selectPlaceById } from '../redux/features/places/placeSlice';
 import { SCREEN_WIDTH } from '../utils/Dimension';
 import { Star, StarSolid } from 'iconoir-react-native';
 import { colors } from '../colors';
@@ -14,7 +14,6 @@ import SuggestionPlaces from '../components/SuggestionPlaces';
 
 const PlaceDetails = ({ item }) => {
   const { name, description, isVisited, tags, } = item
-
   return (
     <View style={styles.place_details}>
       <UseText
@@ -36,10 +35,10 @@ const PlaceDetails = ({ item }) => {
 }
 
 const PlaceDetailsScreen = ({ route }) => {
-  const { place_id, otherParam } = route.params;
+  const { place_id } = route.params;
 
   const dispatch = useDispatch()
-  const place = useSelector((state) => SelecetedPlaceDetails(state, Number(place_id)))
+  const place = useSelector((state) => selectPlaceById(state, Number(place_id)))
 
   const { image, rating, isVisited, id } = place
 
