@@ -4,11 +4,11 @@ import { UseText } from '../customHooks'
 import { fontFamilies } from '../constants'
 import { colors } from '../colors'
 import { useDispatch, useSelector } from 'react-redux'
-import { handleVisited, suggestions } from '../redux/features/place/places/placeSlice'
+import { handleVisited, suggestions } from '../redux/features/places/placeSlice'
 import { useNavigation } from '@react-navigation/native'
 import Icon from 'react-native-vector-icons/Ionicons'
 
-const HorizontalList = ({ item, index }) => {
+const HorizontalList = ({ item }) => {
   const { image, name, isVisited, id } = item
   const navigation = useNavigation()
   const dispatch = useDispatch()

@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Alert, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { UseText } from '../../customHooks'
 import { fontFamilies } from '../../constants'
@@ -6,7 +6,7 @@ import { colors } from '../../colors'
 import { useNavigation } from '@react-navigation/native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { useDispatch } from 'react-redux'
-import { handleVisited } from '../../redux/features/place/places/placeSlice'
+import { handleVisited } from '../../redux/features/places/placeSlice'
 import { Bin, SendDiagonal } from 'iconoir-react-native'
 
 
@@ -39,7 +39,7 @@ const PlaceDetails = ({ item }) => {
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={[styles.visted_btn,]}
-                    onPress={() => dispatch(handleVisited(id))}
+                    onPress={() => Alert.alert("Place share success") }
                 >
                     <SendDiagonal height={24} width={24} color={colors.black} />
                 </TouchableOpacity>

@@ -1,7 +1,7 @@
 import { View, Text, Button, FlatList, StyleSheet } from 'react-native'
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { allVisitedPlaces } from '../../redux/features/place/places/placeSlice'
+import { allVisitedPlaces } from '../../redux/features/places/placeSlice'
 import RenderList from './RenderList'
 import Header from '../../components/Header'
 

@@ -8,7 +8,7 @@ import {
 import { HomeAlt, MapsArrowDiagonal, Settings } from "iconoir-react-native";
 import { colors } from "../colors";
 import { useSelector } from "react-redux";
-import { allVisitedPlaces } from "../redux/features/place/places/placeSlice";
+import { allVisitedPlaces } from "../redux/features/places/placeSlice";
 
 const Tab = createBottomTabNavigator();
 const TabNavigator = () => {

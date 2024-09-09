@@ -1,4 +1,4 @@
-import { Alert, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { colors } from '../../colors';
 import { SCREEN_WIDTH } from '../../utils/Dimension';
@@ -6,8 +6,8 @@ import { UseText } from '../../customHooks/index';
 import { fontFamilies } from '../../constants';
 import Icon from "react-native-vector-icons/Ionicons"
 import { useNavigation } from '@react-navigation/native';
-import { handleVisited } from '../../redux/features/place/places/placeSlice';
-import { useDispatch } from 'react-redux';
+import { handleVisited, selectPlaceById } from '../../redux/features/places/placeSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 
@@ -44,15 +44,18 @@ const PlaceDetails = ({ item }) => {
     )
 }
 
-const RenderList = ({ item, index }) => {
+const RenderList = ({ placeId }) => {
     const navigation = useNavigation()
-    const { image = '', isVisited = false, id = null } = item || {};
+    const place = useSelector(state => selectPlaceById(state, placeId))
+
+    const { image = '', isVisited = false, id = null } = place || {}
     const dispatch = useDispatch()
     return (
+        // <Text>test</Text>
         <View style={{ position: 'relative', }}>
             <TouchableOpacity style={[styles.main,]}
                 activeOpacity={.9}
-                key={index}
+                key={placeId}
                 onPress={() => navigation.navigate('Details', { place_id: id })}
             >
                 <Image source={{ uri: `${image}` }}
@@ -66,7 +69,7 @@ const RenderList = ({ item, index }) => {
                         size={18} color={`${isVisited ? colors.peach : colors.black}`}
                     />
                 </TouchableOpacity>
-                <PlaceDetails item={item} />
+                <PlaceDetails item={place} />
             </TouchableOpacity>
         </View>
     )
